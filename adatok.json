@@ -1,0 +1,14 @@
+{
+    "irok": [
+        {
+            "id": 1,
+            "nev": "József Attila",
+            "szul": 1905
+        },
+        {
+            "id": 2,
+            "nev": "Ady Endre",
+            "szul": 1877
+        }
+    ]
+}
