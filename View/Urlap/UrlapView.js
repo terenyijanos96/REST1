@@ -15,7 +15,7 @@ export default class UrlapView {
         htmlTartalom += `
         <div>
             <label for="${key}" class="form-label">${adatLeiro[key]}</label>
-            <input type="text" id="${key}" class="">
+            <input type="text" id="${key}" class="form-control">
         </div>
         `
     }
