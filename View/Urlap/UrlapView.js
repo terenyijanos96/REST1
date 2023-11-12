@@ -12,13 +12,25 @@ export default class UrlapView {
     let htmlTartalom = ""
 
     for (const key in adatLeiro) {
+        let tipus = key === "nev" ? "text" : "number" 
+
+        if(key === "nev"){
+          tipus = "text"
+        } else {
+          tipus = "number"
+        }
+
         htmlTartalom += `
         <div>
             <label for="${key}" class="form-label">${adatLeiro[key]}</label>
-            <input type="text" id="${key}" class="form-control">
+            <input type="${tipus}" id="${key}" class="form-control">
         </div>
         `
     }
+
+    htmlTartalom += `
+    <button type="submit" class="btn btn-outline-success">Submit</button>
+    `
 
     this.#szuloElem.append(`<form>${htmlTartalom}</form>`)
   }

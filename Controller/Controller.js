@@ -1,3 +1,4 @@
+import UrlapView from "../View/Urlap/UrlapView.js"
 import TablaView from "../View/Tablazat/TablaView.js";
 import DataService from "../model/DataService.js";
 
@@ -9,6 +10,7 @@ export default class Controller{
     }
 
     megjelenit(list){
+        new UrlapView($(".urlap"))
         new TablaView(list, $(".adatok"))
     }
 }
