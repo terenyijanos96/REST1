@@ -14,12 +14,6 @@ export default class UrlapView {
     for (const key in adatLeiro) {
         let tipus = key === "nev" ? "text" : "number" 
 
-        if(key === "nev"){
-          tipus = "text"
-        } else {
-          tipus = "number"
-        }
-
         htmlTartalom += `
         <div>
             <label for="${key}" class="form-label">${adatLeiro[key]}</label>
