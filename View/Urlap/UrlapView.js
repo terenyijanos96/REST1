@@ -15,7 +15,7 @@ export default class UrlapView {
         let tipus = key === "nev" ? "text" : "number" 
 
         htmlTartalom += `
-        <div>
+        <div class="form-group">
             <label for="${key}" class="form-label">${adatLeiro[key]}</label>
             <input type="${tipus}" id="${key}" class="form-control">
         </div>
