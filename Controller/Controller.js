@@ -6,11 +6,16 @@ export default class Controller{
     constructor(){
        this.dataService =  new DataService()
        this.dataService.getData("adatok.json", this.megjelenit)
+
+       $(window).on("urlapKuldes", (event)=>{
+            this.dataService.postData("http://localhost:3000/irok", event.detail)
+       })
        
     }
 
     megjelenit(list){
         new UrlapView($(".urlap"))
         new TablaView(list, $(".adatok"))
-    }
+    }    
+
 }

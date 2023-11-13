@@ -1,6 +1,5 @@
 export default class DataService {
   constructor() {
-    console.log(" data service ");
   }
 
   getData(vegpont, callback) {
@@ -12,12 +11,18 @@ export default class DataService {
       .catch(function (error) {
         console.log(error);
       })
-      .finally(function () {
-        
-      });
   }
 
-  postData() {}
+  postData(vegpont, adat) {
+    axios
+      .post(vegpont, adat)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   putData() {}
 
