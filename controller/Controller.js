@@ -1,5 +1,5 @@
-import UrlapView from "../View/Urlap/UrlapView.js"
-import TablaView from "../View/Tablazat/TablaView.js";
+import UrlapView from "../view/Urlap/UrlapView.js"
+import TablaView from "../view/Tablazat/TablaView.js";
 import DataService from "../model/DataService.js";
 
 export default class Controller{
