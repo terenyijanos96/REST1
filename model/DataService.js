@@ -6,7 +6,7 @@ export default class DataService {
     axios
       .get(vegpont)
       .then(function (response) {
-        callback(response.data.irok)
+        callback(response.data)
       })
       .catch(function (error) {
         console.log(error);

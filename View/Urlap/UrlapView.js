@@ -21,7 +21,7 @@ export default class UrlapView {
         htmlTartalom += `
         <div class="form-group">
             <label for="${key}" class="form-label">${adatLeiro[key]}</label>
-            <input type="${tipus}" id="${key}" class="form-control">
+            <input type="${tipus}" id="${key}" name="${key}" class="form-control">
         </div>
         `
     }
