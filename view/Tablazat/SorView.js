@@ -1,9 +1,12 @@
 export default class SorView {
   #obj = {};
+  #index
+  #szuloElem
+
   constructor(index, obj, szuloElem) {
     this.#obj = obj;
-    this.index = index;
-    this.szuloElem = szuloElem;
+    this.#index = index;
+    this.#szuloElem = szuloElem;
 
     this.htmlOsszerak();
   }
@@ -12,13 +15,13 @@ export default class SorView {
     let htmlTartalom = "";
     let gombObjLista = [
       {
-        gombClass: "btn-outline-danger",
-        ikonClass: "bi-trash-fill",
+        gombClassok: ["btn", "btn-outline-danger", "torles-gomb"],
+        ikonClassok: ["bi", "bi-trash-fill"],
         gombSzoveg: "Törlés",
       },
       {
-        gombClass: "btn-outline-success",
-        ikonClass: "bi-pencil-square",
+        gombClassok: ["btn", "btn-outline-success", "modositas-gomb"] ,
+        ikonClassok: ["bi", "bi-pencil-square"],
         gombSzoveg: "Módosítás",
       },
     ];
@@ -32,14 +35,14 @@ export default class SorView {
     gombObjLista.forEach((gomb) => {
       htmlTartalom += `
         <td>
-          <button class="btn ${gomb.gombClass}">
-            <i class="bi ${gomb.ikonClass}"></i>
+          <button class="${gomb.gombClassok.join(" ")}">
+            <i class="${gomb.ikonClassok.join(" ")}"></i>
             ${gomb.gombSzoveg}
           </button>
         </td>˙
       `;
     });
 
-    this.szuloElem.append(`<tr>${htmlTartalom}</tr>`);
+    this.#szuloElem.append(`<tr>${htmlTartalom}</tr>`);
   }
 }
