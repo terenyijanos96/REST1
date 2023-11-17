@@ -55,7 +55,7 @@ export default class SorView {
   }
 
   #esemenyLetrehozo(esemenynev){
-    const objektum = { index : this.getIndex() + 1}
+    const objektum = { index : this.getIndex()}
     const esemenyem = new CustomEvent(esemenynev, { detail: objektum})
     window.dispatchEvent(esemenyem)
   }

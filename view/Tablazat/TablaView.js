@@ -21,11 +21,10 @@ export default class TablaView{
     }
 
     sorMegjelenito(){
-        
+        let index = 1
 
-        this.#lista.forEach((sor, index)=> {
-            new SorView(index, sor, this.tbodyElem)
-            index++;
+        this.#lista.forEach((sor)=> {
+            new SorView(index++, sor, this.tbodyElem)
         });
     }
 }
