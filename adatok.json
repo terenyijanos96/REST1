@@ -1,14 +1,39 @@
 {
-    "irok": [
-        {
-            "id": 1,
-            "nev": "József Attila",
-            "szul": 1905
-        },
-        {
-            "id": 2,
-            "nev": "Ady Endre",
-            "szul": 1877
-        }
-    ]
+  "irok": [
+    {
+      "id": 1,
+      "nev": "József Attila",
+      "szul": 1905
+    },
+    {
+      "id": 2,
+      "nev": "Ady Endre",
+      "szul": 1877
+    },
+    {
+      "id": 3,
+      "nev": "Petőfy Sándor",
+      "szul": 1823
+    },
+    {
+      "id": 4,
+      "nev": "Arany János",
+      "szul": 1817
+    },
+    {
+      "id": 5,
+      "nev": "Babits Mihály",
+      "szul": 1883
+    },
+    {
+      "id": 6,
+      "nev": "Nemes Nagy Ágnes",
+      "szul": 1922
+    },
+    {
+      "id": 7,
+      "nev": "Radnóti Miklós",
+      "szul": 1909
+    }
+  ]
 }
