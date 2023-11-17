@@ -10,7 +10,8 @@ export default class SorView {
 
     this.htmlOsszerak();
 
-    $(".torles-gomb").on("click", ()=>{
+    $(".torles-gomb:last-child").on("click", (event)=>{
+      event.preventDefault()
       this.#esemenyLetrehozo("sorTorlese")
     })
   }
