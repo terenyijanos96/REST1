@@ -11,6 +11,10 @@ export default class Controller{
             this.dataService.postData("http://localhost:3000/irok", event.detail)
        })
 
+       $(window).on("sorTorlese", (event)=>{
+        this.dataService.deleteData("http://localhost:3000/irok", event.detail.index)
+   })
+
     }
 
     megjelenit(list){

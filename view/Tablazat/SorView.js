@@ -9,6 +9,10 @@ export default class SorView {
     this.#szuloElem = szuloElem;
 
     this.htmlOsszerak();
+
+    $(".torles-gomb").on("click", ()=>{
+      this.#esemenyLetrehozo("sorTorlese")
+    })
   }
 
   htmlOsszerak() {
@@ -48,5 +52,11 @@ export default class SorView {
 
   getIndex(){
     return this.#index
+  }
+
+  #esemenyLetrehozo(esemenynev){
+    const objektum = { index : this.getIndex() + 1}
+    const esemenyem = new CustomEvent(esemenynev, { detail: objektum})
+    window.dispatchEvent(esemenyem)
   }
 }

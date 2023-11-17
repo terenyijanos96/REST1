@@ -19,7 +19,14 @@ export default class DataService {
     }
   }
 
-  putData() {}
+  async deleteData(vegpont, index) {
+    try {
+      const response = await axios.delete(vegpont + "/" + index);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-  deleteData() {}
+  putData() {}
 }
