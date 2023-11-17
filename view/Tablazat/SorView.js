@@ -45,4 +45,8 @@ export default class SorView {
 
     this.#szuloElem.append(`<tr>${htmlTartalom}</tr>`);
   }
+
+  getIndex(){
+    return this.#index
+  }
 }
