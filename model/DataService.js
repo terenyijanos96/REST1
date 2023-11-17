@@ -1,27 +1,22 @@
 export default class DataService {
-  constructor() {
+  constructor() {}
+
+  async getData(vegpont, callback) {
+    try {
+      const response = await axios.get(vegpont);
+      callback(response);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
-  getData(vegpont, callback) {
-    axios
-      .get(vegpont)
-      .then(function (response) {
-        callback(response.data)
-      })
-      .catch(function (error) {
-        console.log(error);
-      })
-  }
-
-  postData(vegpont, adat) {
-    axios
-      .post(vegpont, adat)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  async postData(vegpont, adat) {
+    try {
+      const response = await axios.post(vegpont, adat);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   putData() {}
