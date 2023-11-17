@@ -4,7 +4,7 @@ export default class DataService {
   async getData(vegpont, callback) {
     try {
       const response = await axios.get(vegpont);
-      callback(response);
+      callback(response.data);
     } catch (error) {
       console.log(error);
     }
