@@ -9,14 +9,37 @@ export default class SorView {
   }
 
   htmlOsszerak() {
-    let cellaTartalom = "";
+    let htmlTartalom = "";
+    let gombObjLista = [
+      {
+        gombClass: "btn-outline-danger",
+        ikonClass: "bi-trash-fill",
+        gombSzoveg: "Törlés",
+      },
+      {
+        gombClass: "btn-outline-success",
+        ikonClass: "bi-pencil-square",
+        gombSzoveg: "Módosítás",
+      },
+    ];
 
     for (const key in this.#obj) {
-      cellaTartalom += `
+      htmlTartalom += `
             <td>${this.#obj[key]}</td>˙
-        `
+        `;
     }
 
-    this.szuloElem.append(`<tr>${cellaTartalom}</tr>`)
+    gombObjLista.forEach((gomb) => {
+      htmlTartalom += `
+        <td>
+          <button class="btn ${gomb.gombClass}">
+            <i class="bi ${gomb.ikonClass}"></i>
+            ${gomb.gombSzoveg}
+          </button>
+        </td>˙
+      `;
+    });
+
+    this.szuloElem.append(`<tr>${htmlTartalom}</tr>`);
   }
 }
