@@ -1,18 +1,16 @@
 export default class SorView {
   #obj = {};
-  #index
   #szuloElem
 
-  constructor(index, obj, szuloElem) {
+  constructor(id, obj, szuloElem) {
     this.#obj = obj;
-    this.#index = index;
     this.#szuloElem = szuloElem;
-
     this.htmlOsszerak();
-
-    $(".torles-gomb:last-child").on("click", (event)=>{
+    
+    $(".torles-gomb:last").on("click", (event)=> {
       event.preventDefault()
       this.#esemenyLetrehozo("sorTorlese")
+
     })
   }
 
@@ -51,13 +49,11 @@ export default class SorView {
     this.#szuloElem.append(`<tr>${htmlTartalom}</tr>`);
   }
 
-  getIndex(){
-    return this.#index
-  }
 
   #esemenyLetrehozo(esemenynev){
-    const objektum = { index : this.getIndex()}
-    const esemenyem = new CustomEvent(esemenynev, { detail: objektum})
+    
+    console.log(this.#obj.id)
+    const esemenyem = new CustomEvent(esemenynev, { detail: this.#obj.id})
     window.dispatchEvent(esemenyem)
   }
 }

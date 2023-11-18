@@ -1,5 +1,8 @@
 export default class DataService {
-  constructor() {}
+  constructor() {
+    axios.defaults.baseURL = 'http://localhost:8000/api/';
+
+  }
 
   async getData(vegpont, callback) {
     try {
@@ -19,12 +22,12 @@ export default class DataService {
     }
   }
 
-  async deleteData(vegpont, index) {
+  async deleteData(vegpont, index, hibaCallback) {
     try {
       const response = await axios.delete(vegpont + "/" + index);
       console.log(response);
     } catch (error) {
-      console.log(error);
+      hibaCallback(error)
     }
   }
 

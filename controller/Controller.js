@@ -1,25 +1,37 @@
-import UrlapView from "../view/Urlap/UrlapView.js"
+import UrlapView from "../view/Urlap/UrlapView.js";
 import TablaView from "../view/Tablazat/TablaView.js";
 import DataService from "../model/DataService.js";
 
-export default class Controller{
-    constructor(){
-       this.dataService =  new DataService()
-       this.dataService.getData("http://localhost:3000/irok", this.megjelenit)
+export default class Controller {
+  constructor() {
+    this.dataService = new DataService();
+    this.dataService.getData("flights", this.megjelenit);
 
-       $(window).on("urlapKuldes", (event)=>{
-            this.dataService.postData("http://localhost:3000/irok", event.detail)
-       })
+    $(window).on("urlapKuldes", (event) => {
+      this.dataService.postData("flights", event.detail);
+    });
 
-       $(window).on("sorTorlese", (event)=>{
-        this.dataService.deleteData("http://localhost:3000/irok", event.detail.index)
-   })
+    $(window).on("sorTorlese", (event) => {
+      this.dataService.deleteData("flights", event.detail, this.hibaCallback)
+    });
 
+    $(window).on("sorModositas");
+  }
+
+  hibaCallback(err){
+    const hibaKod= err.response.status
+    switch (hibaKod) {
+      case value:
+        
+        break;
+    
+      default:
+        break;
     }
+  }
 
-    megjelenit(list){
-        new UrlapView($(".urlap"))
-        new TablaView(list, $(".adatok"))
-    }    
-
+  megjelenit(list) {
+    new UrlapView($(".urlap"));
+    new TablaView(list, $(".adatok"));
+  }
 }
